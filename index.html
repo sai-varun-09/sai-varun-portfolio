@@ -1,0 +1,632 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodepudi Sai Varun | .NET Developer Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for professional feel - Using Inter font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+        /* Updated Color Scheme: Dark Gray background with Teal/Cyan accent */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background */
+            color: #e2e8f0; /* Light text */
+        }
+
+        .header-shadow {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+        /* Teal accent color: tailwind-css-color: teal-400 (#2dd4bf) */
+        .accent-color {
+            color: #2dd4bf;
+        }
+
+        .bg-accent {
+            background-color: #0d9488; /* Teal-600 for solid buttons */
+        }
+
+        .hover\:bg-accent:hover {
+            background-color: #14b8a6; /* Teal-500 hover */
+        }
+
+        .border-accent {
+            border-color: #2dd4bf;
+        }
+
+        .section-header {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+            .section-header::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 70%;
+                height: 4px;
+                background-color: #2dd4bf; /* Teal-400 accent */
+                border-radius: 9999px;
+            }
+
+        .nav-link:hover {
+            color: #5eead4; /* Lighter teal on hover */
+        }
+
+        .tab-button.active {
+            background-color: #0d9488; /* Teal-600 */
+            color: white;
+            box-shadow: 0 4px 10px rgba(13, 148, 136, 0.4);
+        }
+
+        .card {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid #1f2937; /* Darker subtle border */
+        }
+
+            .card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(45, 212, 191, 0.2);
+                border-color: #2dd4bf;
+            }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm header-shadow transition-colors duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold accent-color hover:text-teal-300 transition duration-300">B. Sai Varun</a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 text-lg font-medium">
+                <li><a href="#about" class="nav-link transition duration-300">About</a></li>
+                <li><a href="#skills" class="nav-link transition duration-300">Skills</a></li>
+                <li><a href="#portfolio" class="nav-link transition duration-300">Projects</a></li>
+                <li><a href="#contact" class="nav-link transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="menu-button" class="md:hidden accent-color hover:text-teal-300 focus:outline-none p-2 rounded-md">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800/95 py-2">
+            <ul class="flex flex-col space-y-2 px-4 text-center text-base">
+                <li><a href="#about" class="nav-link block py-2 rounded-md hover:bg-gray-700 transition duration-300">About</a></li>
+                <li><a href="#skills" class="nav-link block py-2 rounded-md hover:bg-gray-700 transition duration-300">Skills</a></li>
+                <li><a href="#portfolio" class="nav-link block py-2 rounded-md hover:bg-gray-700 transition duration-300">Projects</a></li>
+                <li><a href="#contact" class="nav-link block py-2 rounded-md hover:bg-gray-700 transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- 1. Hero / Profile Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center pt-24 pb-12 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-[0.05] bg-[url('https://placehold.co/100x100/0d1117/2dd4bf?text=...')] pattern-dots"></div>
+            <div class="relative mb-8 z-10">
+                <!-- Placeholder Profile Image -->
+                <img src="https://placehold.co/150x150/1e293b/2dd4bf?text=B+S+V" alt="Bodepudi Sai Varun Profile"
+                     class="w-36 h-36 rounded-full mx-auto object-cover border-4 border-teal-500 shadow-xl transition transform hover:scale-110 hover:shadow-teal-400/30">
+            </div>
+            <h1 class="text-5xl sm:text-6xl font-extrabold text-white mb-4 leading-tight relative z-10">
+                Hello, I'm <span class="accent-color">Bodepudi Sai Varun</span>.
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-400 mb-8 font-light relative z-10">
+                *Motivated .NET Developer* | Full Stack Engineering | Generative AI Integration
+            </p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 relative z-10">
+                <a href="#portfolio" class="px-8 py-3 bg-accent text-white font-semibold rounded-lg shadow-lg hover:bg-teal-500 transition duration-300 transform hover:scale-105">
+                    Explore Projects
+                </a>
+                <a href="#contact" class="px-8 py-3 border border-teal-600 accent-color font-semibold rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105">
+                    Connect With Me
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section (Combined Summary and Internship) -->
+        <section id="about" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-white section-header">Professional Summary & Experience</h2>
+
+            <div class="space-y-8">
+                <div class="card bg-gray-800 p-6 sm:p-10 rounded-xl shadow-2xl transition hover:shadow-teal-500/20">
+                    <h3 class="text-2xl font-semibold accent-color mb-3">Profile Overview</h3>
+                    <p class="text-lg leading-relaxed mb-4 text-gray-300">
+                        Motivated and detail-oriented *.NET Developer* with a strong foundation in *C#, ASP.NET, and SQL Server*. Proven skills in building scalable web applications, implementing backend logic, and integrating RESTful APIs. I am an analytical thinker with a focus on writing clean, maintainable code and optimizing performance.
+                    </p>
+                    <p class="text-base text-gray-400">
+                        Education: Bachelor of Technology in Computer Science And Engineering (2021-2025) from St. Martin's Engineering College | JNTUH University.
+                    </p>
+                </div>
+
+                <div class="card bg-gray-800 p-6 sm:p-10 rounded-xl shadow-2xl transition hover:shadow-teal-500/20">
+                    <h3 class="text-2xl font-semibold accent-color mb-3">Internship Experience</h3>
+                    <p class="text-xl font-medium text-white mb-1">.NET Developer Intern</p>
+                    <p class="text-lg text-gray-400 mb-3">Ramanasoft | (September 2025 - Present)</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300 ml-4">
+                        <li>Assisted in developing and debugging *ASP.NET web applications*.</li>
+                        <li>Optimized *SQL queries* to enhance database efficiency.</li>
+                        <li>Collaborated with senior developers to enhance overall *backend performance* of applications.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills Section -->
+        <section id="skills" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-white section-header">Technical Skills</h2>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+
+                <!-- Programming Languages -->
+                <div class="card bg-gray-800 p-5 rounded-lg text-center shadow-xl border-t-4 border-teal-500 hover:border-teal-400">
+                    <p class="text-sm text-gray-400 mb-1">Languages</p>
+                    <p class="text-lg font-bold accent-color">C#</p>
+                    <p class="text-lg font-bold text-white">JavaScript</p>
+                </div>
+
+                <!-- Backend/Frameworks -->
+                <div class="card bg-gray-800 p-5 rounded-lg text-center shadow-xl border-t-4 border-teal-500 hover:border-teal-400">
+                    <p class="text-sm text-gray-400 mb-1">Backend/Web</p>
+                    <p class="text-lg font-bold accent-color">ASP.NET</p>
+                    <p class="text-lg font-bold text-white">HTML/CSS</p>
+                </div>
+
+                <!-- Frontend -->
+                <div class="card bg-gray-800 p-5 rounded-lg text-center shadow-xl border-t-4 border-teal-500 hover:border-teal-400">
+                    <p class="text-sm text-gray-400 mb-1">Frontend</p>
+                    <p class="text-lg font-bold accent-color">React.js</p>
+                    <p class="text-lg font-bold text-white">RESTful APIs</p>
+                </div>
+
+                <!-- Database/ORM -->
+                <div class="card bg-gray-800 p-5 rounded-lg text-center shadow-xl border-t-4 border-teal-500 hover:border-teal-400">
+                    <p class="text-sm text-gray-400 mb-1">Database</p>
+                    <p class="text-lg font-bold accent-color">SQL Server</p>
+                    <p class="text-lg font-bold text-white">Entity Framework</p>
+                </div>
+
+                <!-- Tools -->
+                <div class="card bg-gray-800 p-5 rounded-lg text-center shadow-xl border-t-4 border-teal-500 hover:border-teal-400">
+                    <p class="text-sm text-gray-400 mb-1">Tools</p>
+                    <p class="text-lg font-bold accent-color">Git / VS Code</p>
+                    <p class="text-lg font-bold text-white">Visual Studio</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Portfolio Section -->
+        <section id="portfolio" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-white section-header">Projects Showcase</h2>
+
+            <!-- Tabs Navigation -->
+            <div class="flex flex-wrap gap-4 mb-8 justify-center">
+                <button data-tab="fullstack" class="tab-button active px-5 py-2 rounded-full font-semibold text-sm bg-gray-700 hover:bg-gray-600 transition">Full Stack Projects</button>
+                <button data-tab="ai" class="tab-button px-5 py-2 rounded-full font-semibold text-sm bg-gray-700 hover:bg-gray-600 transition">Generative AI</button>
+                <button data-tab="major_mini" class="tab-button px-5 py-2 rounded-full font-semibold text-sm bg-gray-700 hover:bg-gray-600 transition">Academic / Major</button>
+            </div>
+
+            <!-- Tabs Content -->
+            <div id="projects-container">
+
+                <!-- Full Stack Projects (Default Active) -->
+                <div id="fullstack" class="tab-content grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Project Card: Full Stack Stock Monitoring Platform -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=Stock+Platform" alt="Stock Monitoring" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">Stock Monitoring Platform</h3>
+                            <p class="text-gray-400 mb-4 text-sm">Interactive web application for tracking, analyzing, and managing stock trading activities in real-time.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full">Full Stack</span>
+                                <span class="text-xs font-medium bg-gray-700 text-white px-3 py-1 rounded-full">Data Analysis</span>
+                            </div>
+                            <a href="#" class="accent-color hover:text-teal-300 font-medium flex items-center mt-2">View Code / Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: Meet Stream - Real-Time Communication Platform -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=Meet+Stream" alt="Meet Stream" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">Meet Stream</h3>
+                            <p class="text-gray-400 mb-4 text-sm">Real-Time Communication Platform offering seamless video conferencing and messaging capabilities between users.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full">WebRTC</span>
+                                <span class="text-xs font-medium bg-gray-700 text-white px-3 py-1 rounded-full">Real-Time</span>
+                            </div>
+                            <a href="#" class="accent-color hover:text-teal-300 font-medium flex items-center mt-2">View Code / Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: ProConnect -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=ProConnect" alt="ProConnect" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">ProConnect</h3>
+                            <p class="text-gray-400 mb-4 text-sm">Web platform for professionals to showcase their work, projects, and portfolios in a structured environment.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full">Portfolio Showcase</span>
+                                <span class="text-xs font-medium bg-gray-700 text-white px-3 py-1 rounded-full">Community</span>
+                            </div>
+                            <a href="#" class="accent-color hover:text-teal-300 font-medium flex items-center mt-2">View Code / Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: CodeSpace -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=CodeSpace" alt="CodeSpace" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">CodeSpace</h3>
+                            <p class="text-gray-400 mb-4 text-sm">Engineered a cloud-based collaborative hub for storing, managing, and sharing coding projects among teams.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full">Collaboration</span>
+                                <span class="text-xs font-medium bg-gray-700 text-white px-3 py-1 rounded-full">Cloud Storage</span>
+                            </div>
+                            <a href="#" class="accent-color hover:text-teal-300 font-medium flex items-center mt-2">View Code / Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generative AI Projects -->
+                <div id="ai" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card: MedBot -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=MedBot+AI" alt="MedBot" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">MedBot - Intelligent Medical Chatbot</h3>
+                            <p class="text-gray-400 mb-4 text-sm">AI-powered chatbot built using *Llama 2* and *Faiss CPU* for efficient, context-aware medical query responses.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full">Llama 2</span>
+                                <span class="text-xs font-medium bg-gray-700 text-white px-3 py-1 rounded-full">NLP / RAG</span>
+                            </div>
+                            <a href="#" class="accent-color hover:text-teal-300 font-medium flex items-center mt-2">View Code / Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: Text2Tune -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=Text2Tune+AI" alt="Text2Tune" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">Text2Tune - AI Music Generation</h3>
+                            <p class="text-gray-400 mb-4 text-sm">Utilized Meta's *AudioCraft* and *MusicGen* models to generate musical compositions from simple text prompts.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full">MusicGen</span>
+                                <span class="text-xs font-medium bg-gray-700 text-white px-3 py-1 rounded-full">Generative AI</span>
+                            </div>
+                            <a href="#" class="accent-color hover:text-teal-300 font-medium flex items-center mt-2">View Code / Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic / Major Projects -->
+                <div id="major_mini" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card: Night Vision System -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=Night+Vision+System" alt="Night Vision" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">Night Vision System (Major)</h3>
+                            <p cla<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodepudi Sai Varun | .NET Developer Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for professional feel - Using Inter font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+        /* Updated Color Scheme: Dark Gray background with Teal/Cyan accent */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background */
+            color: #e2e8f0; /* Light text */
+        }
+        .header-shadow {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+        /* Teal accent color: tailwind-css-color: teal-400 (#2dd4bf) */
+        .accent-color {
+            color: #2dd4bf; 
+        }
+        .bg-accent {
+            background-color: #0d9488; /* Teal-600 for solid buttons */
+        }
+        .hover\:bg-accent:hover {
+            background-color: #14b8a6; /* Teal-500 hover */
+        }
+        .border-accent {
+            border-color: #2dd4bf;
+        }
+
+        .section-header {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70%;
+            height: 4px;
+            background-color: #2dd4bf; /* Teal-400 accent */
+            border-radius: 9999px;
+        }
+        .nav-link:hover {
+            color: #5eead4; /* Lighter teal on hover */
+        }
+        .tab-button.active {
+            background-color: #0d9488; /* Teal-600 */
+            color: white;
+            box-shadow: 0 4px 10px rgba(13, 148, 136, 0.4);
+        }
+        .card {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid #1f2937; /* Darker subtle border */
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(45, 212, 191, 0.2);
+            border-color: #2dd4bf;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm header-shadow transition-colors duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold accent-color hover:text-teal-300 transition duration-300">B. Sai Varun</a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 text-lg font-medium">
+                <li><a href="#about" class="nav-link transition duration-300">About</a></li>
+                <li><a href="#skills" class="nav-link transition duration-300">Skills</a></li>
+                <li><a href="#portfolio" class="nav-link transition duration-300">Projects</a></li>
+                <li><a href="#contact" class="nav-link transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="menu-button" class="md:hidden accent-color hover:text-teal-300 focus:outline-none p-2 rounded-md">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800/95 py-2">
+            <ul class="flex flex-col space-y-2 px-4 text-center text-base">
+                <li><a href="#about" class="nav-link block py-2 rounded-md hover:bg-gray-700 transition duration-300">About</a></li>
+                <li><a href="#skills" class="nav-link block py-2 rounded-md hover:bg-gray-700 transition duration-300">Skills</a></li>
+                <li><a href="#portfolio" class="nav-link block py-2 rounded-md hover:bg-gray-700 transition duration-300">Projects</a></li>
+                <li><a href="#contact" class="nav-link block py-2 rounded-md hover:bg-gray-700 transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- 1. Hero / Profile Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center pt-24 pb-12 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-[0.05] bg-[url('https://placehold.co/100x100/0d1117/2dd4bf?text=...')] pattern-dots"></div>
+            <div class="relative mb-8 z-10">
+                <!-- Placeholder Profile Image -->
+                <img src="https://placehold.co/150x150/1e293b/2dd4bf?text=B+S+V" alt="Bodepudi Sai Varun Profile"
+                     class="w-36 h-36 rounded-full mx-auto object-cover border-4 border-teal-500 shadow-xl transition transform hover:scale-110 hover:shadow-teal-400/30">
+            </div>
+            <h1 class="text-5xl sm:text-6xl font-extrabold text-white mb-4 leading-tight relative z-10">
+                Hello, I'm <span class="accent-color">Bodepudi Sai Varun</span>.
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-400 mb-8 font-light relative z-10">
+                *Motivated .NET Developer* | Full Stack Engineering | Generative AI Integration
+            </p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 relative z-10">
+                <a href="#portfolio" class="px-8 py-3 bg-accent text-white font-semibold rounded-lg shadow-lg hover:bg-teal-500 transition duration-300 transform hover:scale-105">
+                    Explore Projects
+                </a>
+                <a href="#contact" class="px-8 py-3 border border-teal-600 accent-color font-semibold rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105">
+                    Connect With Me
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section (Combined Summary and Internship) -->
+        <section id="about" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-white section-header">Professional Summary & Experience</h2>
+
+            <div class="space-y-8">
+                <div class="card bg-gray-800 p-6 sm:p-10 rounded-xl shadow-2xl transition hover:shadow-teal-500/20">
+                    <h3 class="text-2xl font-semibold accent-color mb-3">Profile Overview</h3>
+                    <p class="text-lg leading-relaxed mb-4 text-gray-300">
+                        Motivated and detail-oriented *.NET Developer* with a strong foundation in *C#, ASP.NET, and SQL Server*. Proven skills in building scalable web applications, implementing backend logic, and integrating RESTful APIs. I am an analytical thinker with a focus on writing clean, maintainable code and optimizing performance.
+                    </p>
+                    <p class="text-base text-gray-400">
+                        Education: Bachelor of Technology in Computer Science And Engineering (2021-2025) from St. Martin's Engineering College | JNTUH University.
+                    </p>
+                </div>
+
+                <div class="card bg-gray-800 p-6 sm:p-10 rounded-xl shadow-2xl transition hover:shadow-teal-500/20">
+                    <h3 class="text-2xl font-semibold accent-color mb-3">Internship Experience</h3>
+                    <p class="text-xl font-medium text-white mb-1">.NET Developer Intern</p>
+                    <p class="text-lg text-gray-400 mb-3">Ramanasoft | (September 2025 - Present)</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300 ml-4">
+                        <li>Assisted in developing and debugging *ASP.NET web applications*.</li>
+                        <li>Optimized *SQL queries* to enhance database efficiency.</li>
+                        <li>Collaborated with senior developers to enhance overall *backend performance* of applications.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills Section -->
+        <section id="skills" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-white section-header">Technical Skills</h2>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+
+                <!-- Programming Languages -->
+                <div class="card bg-gray-800 p-5 rounded-lg text-center shadow-xl border-t-4 border-teal-500 hover:border-teal-400">
+                    <p class="text-sm text-gray-400 mb-1">Languages</p>
+                    <p class="text-lg font-bold accent-color">C#</p>
+                    <p class="text-lg font-bold text-white">JavaScript</p>
+                </div>
+
+                <!-- Backend/Frameworks -->
+                <div class="card bg-gray-800 p-5 rounded-lg text-center shadow-xl border-t-4 border-teal-500 hover:border-teal-400">
+                    <p class="text-sm text-gray-400 mb-1">Backend/Web</p>
+                    <p class="text-lg font-bold accent-color">ASP.NET</p>
+                    <p class="text-lg font-bold text-white">HTML/CSS</p>
+                </div>
+
+                <!-- Frontend -->
+                <div class="card bg-gray-800 p-5 rounded-lg text-center shadow-xl border-t-4 border-teal-500 hover:border-teal-400">
+                    <p class="text-sm text-gray-400 mb-1">Frontend</p>
+                    <p class="text-lg font-bold accent-color">React.js</p>
+                    <p class="text-lg font-bold text-white">RESTful APIs</p>
+                </div>
+
+                <!-- Database/ORM -->
+                <div class="card bg-gray-800 p-5 rounded-lg text-center shadow-xl border-t-4 border-teal-500 hover:border-teal-400">
+                    <p class="text-sm text-gray-400 mb-1">Database</p>
+                    <p class="text-lg font-bold accent-color">SQL Server</p>
+                    <p class="text-lg font-bold text-white">Entity Framework</p>
+                </div>
+
+                <!-- Tools -->
+                <div class="card bg-gray-800 p-5 rounded-lg text-center shadow-xl border-t-4 border-teal-500 hover:border-teal-400">
+                    <p class="text-sm text-gray-400 mb-1">Tools</p>
+                    <p class="text-lg font-bold accent-color">Git / VS Code</p>
+                    <p class="text-lg font-bold text-white">Visual Studio</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Portfolio Section -->
+        <section id="portfolio" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-white section-header">Projects Showcase</h2>
+
+            <!-- Tabs Navigation -->
+            <div class="flex flex-wrap gap-4 mb-8 justify-center">
+                <button data-tab="fullstack" class="tab-button active px-5 py-2 rounded-full font-semibold text-sm bg-gray-700 hover:bg-gray-600 transition">Full Stack Projects</button>
+                <button data-tab="ai" class="tab-button px-5 py-2 rounded-full font-semibold text-sm bg-gray-700 hover:bg-gray-600 transition">Generative AI</button>
+                <button data-tab="major_mini" class="tab-button px-5 py-2 rounded-full font-semibold text-sm bg-gray-700 hover:bg-gray-600 transition">Academic / Major</button>
+            </div>
+
+            <!-- Tabs Content -->
+            <div id="projects-container">
+                
+                <!-- Full Stack Projects (Default Active) -->
+                <div id="fullstack" class="tab-content grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Project Card: Full Stack Stock Monitoring Platform -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=Stock+Platform" alt="Stock Monitoring" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">Stock Monitoring Platform</h3>
+                            <p class="text-gray-400 mb-4 text-sm">Interactive web application for tracking, analyzing, and managing stock trading activities in real-time.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full">Full Stack</span>
+                                <span class="text-xs font-medium bg-gray-700 text-white px-3 py-1 rounded-full">Data Analysis</span>
+                            </div>
+                            <a href="#" class="accent-color hover:text-teal-300 font-medium flex items-center mt-2">View Code / Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: Meet Stream - Real-Time Communication Platform -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=Meet+Stream" alt="Meet Stream" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">Meet Stream</h3>
+                            <p class="text-gray-400 mb-4 text-sm">Real-Time Communication Platform offering seamless video conferencing and messaging capabilities between users.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full">WebRTC</span>
+                                <span class="text-xs font-medium bg-gray-700 text-white px-3 py-1 rounded-full">Real-Time</span>
+                            </div>
+                            <a href="#" class="accent-color hover:text-teal-300 font-medium flex items-center mt-2">View Code / Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: ProConnect -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=ProConnect" alt="ProConnect" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">ProConnect</h3>
+                            <p class="text-gray-400 mb-4 text-sm">Web platform for professionals to showcase their work, projects, and portfolios in a structured environment.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full">Portfolio Showcase</span>
+                                <span class="text-xs font-medium bg-gray-700 text-white px-3 py-1 rounded-full">Community</span>
+                            </div>
+                            <a href="#" class="accent-color hover:text-teal-300 font-medium flex items-center mt-2">View Code / Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: CodeSpace -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=CodeSpace" alt="CodeSpace" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">CodeSpace</h3>
+                            <p class="text-gray-400 mb-4 text-sm">Engineered a cloud-based collaborative hub for storing, managing, and sharing coding projects among teams.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full">Collaboration</span>
+                                <span class="text-xs font-medium bg-gray-700 text-white px-3 py-1 rounded-full">Cloud Storage</span>
+                            </div>
+                            <a href="#" class="accent-color hover:text-teal-300 font-medium flex items-center mt-2">View Code / Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generative AI Projects -->
+                <div id="ai" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card: MedBot -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=MedBot+AI" alt="MedBot" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">MedBot - Intelligent Medical Chatbot</h3>
+                            <p class="text-gray-400 mb-4 text-sm">AI-powered chatbot built using *Llama 2* and *Faiss CPU* for efficient, context-aware medical query responses.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full">Llama 2</span>
+                                <span class="text-xs font-medium bg-gray-700 text-white px-3 py-1 rounded-full">NLP / RAG</span>
+                            </div>
+                            <a href="#" class="accent-color hover:text-teal-300 font-medium flex items-center mt-2">View Code / Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: Text2Tune -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=Text2Tune+AI" alt="Text2Tune" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">Text2Tune - AI Music Generation</h3>
+                            <p class="text-gray-400 mb-4 text-sm">Utilized Meta's *AudioCraft* and *MusicGen* models to generate musical compositions from simple text prompts.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full">MusicGen</span>
+                                <span class="text-xs font-medium bg-gray-700 text-white px-3 py-1 rounded-full">Generative AI</span>
+                            </div>
+                            <a href="#" class="accent-color hover:text-teal-300 font-medium flex items-center mt-2">View Code / Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic / Major Projects -->
+                <div id="major_mini" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card: Night Vision System -->
+                    <div class="card bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x350/1f2937/2dd4bf?text=Night+Vision+System" alt="Night Vision" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold accent-color mb-2">Night Vision System (Major)</h3>
+                            <p cla
